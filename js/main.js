@@ -118,6 +118,12 @@ const jugadores = [
         pais: 'francia',
         thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVfjktLMLOISpBFpB0l5bX_IjBFvxH83utuA&usqp=CAU" ,
     },
+    {
+        name: 'mbappe',
+        edad: 23,
+        pais: 'francia',
+        thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVfjktLMLOISpBFpB0l5bX_IjBFvxH83utuA&usqp=CAU" ,
+    },
 ]
 const figuritasHTML = document.getElementById('figuritas')
 //template strings--------
