@@ -1,0 +1,19 @@
+#figuritas{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5 rem;
+    justify-content: space-around;
+}
+.caja{
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    padding: 10px 5px;
+    border-radius: 10px;
+    margin: 20px;
+}
+.foto{
+    width: 100%;
+}
