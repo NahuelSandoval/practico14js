@@ -155,7 +155,7 @@ console.log(botones);
 
 for (const boton of botones){
     boton.addEventListener('click' , function(){
-        let seleccion = jugadores.find (jugador => jugador.name == this.name);
+        let seleccion = jugadores.find (jugador => jugador.name == this.id);
         console.log('El jugador es ' + seleccion.name);
     })
 }
