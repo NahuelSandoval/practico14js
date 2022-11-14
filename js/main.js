@@ -139,9 +139,23 @@ const plantilla = (jugador) =>{
                     <img src="${jugador.thumbnail}" class="foto" >
                     <p>edad: ${jugador.edad}</p>
                     <p>pais: ${jugador.pais}</p>
+                    <button id = '${jugador.name}' class = 'btnCompra'> Comprar </button> 
                 </div>`
 }
 for(jugador of jugadores){
     figuritasHTML.innerHTML+=plantilla(jugador)
 }
 
+//  ya es clase 16 a partir de aca ---------------
+
+//seleccionar botones generados 
+
+let botones = document.getElementsByClassName('btnCompra')
+console.log(botones);
+
+for (const boton of botones){
+    boton.addEventListener('click' , function(){
+        let seleccion = jugadores.find (jugador => jugador.name == this.name);
+        console.log('El jugador es ' + seleccion.name);
+    })
+}
