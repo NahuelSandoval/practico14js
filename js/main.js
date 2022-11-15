@@ -165,8 +165,27 @@ for (const boton of botones){
 //Obtener formularios
 
 let miFormulario = document.getElementById("nuevosJugadores");
-
+//  creamos la variable formulario y la vamos a buscar
+//luego anulamos el evento que viene por default
 miFormulario.onsubmit = (e) =>{
     e.preventDefault();
-    console.log("hola")
+    console.log(this)
+//con this el evento te devuelve el global
+
+//ahora para llegar al objeto asociado al evento se usa e.target
+console.log(e.target);
+//y para llegar a los eventos id, en vez de this.id usamos e.target.id
+console.log(e.target.id)
+//Obtener los inputs hijos del formulario 
+
+const inputs = miFormulario.children;
+
+//por ultimo instanciamos un objeto usando los value de cada input
+
+jugadores.push(new jugador(0,inputs[0].value , inputs[1].value , inputs[2].value));
+
+console.log(jugadores);
+
 }
+
+
