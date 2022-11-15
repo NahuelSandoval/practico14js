@@ -159,3 +159,14 @@ for (const boton of botones){
         console.log('El jugador es ' + seleccion.name);
     })
 }
+
+// segunda parte, formularios -------
+
+//Obtener formularios
+
+let miFormulario = document.getElementById("nuevosJugadores");
+
+miFormulario.onsubmit = (e) =>{
+    e.preventDefault();
+    console.log("hola")
+}
