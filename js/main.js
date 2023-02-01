@@ -182,8 +182,16 @@ const inputs = miFormulario.children;
 
 //por ultimo instanciamos un objeto usando los value de cada input
 
-jugadores.push(new jugador(0,inputs[0].value , inputs[1].value , inputs[2].value));
+const newJugador = {
+    name: miFormulario.nombre.value,
+    imagen: miFormulario.imagen.value,
+    edad: parseFloat(miFormulario.edad.value),
+    nacionalidad: miFormulario.nacionalidad.value
+}
 
+//--------------
+jugadores.push(newJugador);
+/* (inputs[0].value , inputs[1].value , inputs[2].value, inputs[3].value) */
 console.log(jugadores);
 
 }
