@@ -184,9 +184,9 @@ const inputs = miFormulario.children;
 
 const newJugador = {
     name: miFormulario.nombre.value,
-    imagen: miFormulario.imagen.value,
+    thumbnail: miFormulario.imagen.value,
     edad: parseFloat(miFormulario.edad.value),
-    nacionalidad: miFormulario.nacionalidad.value
+    pais: miFormulario.nacionalidad.value
 }
 
 //--------------
@@ -194,6 +194,16 @@ jugadores.push(newJugador);
 /* (inputs[0].value , inputs[1].value , inputs[2].value, inputs[3].value) */
 console.log(jugadores);
 
+miFormulario.nombre.value = miFormulario.imagen.value = miFormulario.edad.value = miFormulario.nacionalidad.value = ""
+
+renderPlantilla()
+
 }
 
-
+const renderPlantilla = () => {
+    figuritasHTML.innerHTML = ""
+    for(jugador of jugadores){
+        figuritasHTML.innerHTML+=plantilla(jugador)
+    }
+}
+/*  renderPlantilla() */
