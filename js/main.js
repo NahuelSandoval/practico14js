@@ -146,9 +146,9 @@ for(jugador of jugadores){
     figuritasHTML.innerHTML+=plantilla(jugador)
 }
 
-//  ya es clase 16 a partir de aca ---------------
+//  ya es clase 16 a partir de aca -----------------------------------------------------------
 
-//seleccionar botones generados 
+//seleccionar botones generados
 
 let botones = document.getElementsByClassName('btnCompra')
 console.log(botones);
@@ -191,14 +191,32 @@ const newJugador = {
 
 //--------------
 jugadores.push(newJugador);
-/* (inputs[0].value , inputs[1].value , inputs[2].value, inputs[3].value) */
+
 console.log(jugadores);
 
 miFormulario.nombre.value = miFormulario.imagen.value = miFormulario.edad.value = miFormulario.nacionalidad.value = ""
 
 renderPlantilla()
 
+
+
+//-------------la pongo aca asi despues de renderizar me reconoce el boton de la nueva card-----------------------------------
+let botones = document.getElementsByClassName('btnCompra')
+console.log(botones);
+
+for (const boton of botones){
+    boton.addEventListener('click' , function(){
+        let seleccion = jugadores.find (jugador => jugador.name == this.id);
+        console.log('El jugador es ' + seleccion.name);
+    })
 }
+}
+
+
+
+
+//----------------------------------------------------
+
 
 const renderPlantilla = () => {
     figuritasHTML.innerHTML = ""
