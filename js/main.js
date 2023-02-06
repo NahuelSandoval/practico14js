@@ -142,23 +142,30 @@ const plantilla = (jugador) =>{
                     <button id = '${jugador.name}' class = 'btnCompra'> Comprar </button> 
                 </div>`
 }
-for(jugador of jugadores){
-    figuritasHTML.innerHTML+=plantilla(jugador)
+// Se crea la funcion de renderizar, que lo haga para cada plantilla y despues que reconozca el boton de cada uno
+
+const renderPlantilla = () => {
+    figuritasHTML.innerHTML = ""
+    for(jugador of jugadores){
+        figuritasHTML.innerHTML+=plantilla(jugador)
+    }
+
+    let botones = document.getElementsByClassName('btnCompra')
+    console.log(botones);
+    
+    for (const boton of botones){
+        boton.addEventListener('click' , function(){
+            let seleccion = jugadores.find (jugador => jugador.name == this.id);
+            console.log('El jugador es ' + seleccion.name);
+        })
+    }
+    
 }
+
+renderPlantilla()
+
 
 //  ya es clase 16 a partir de aca -----------------------------------------------------------
-
-//seleccionar botones generados
-
-let botones = document.getElementsByClassName('btnCompra')
-console.log(botones);
-
-for (const boton of botones){
-    boton.addEventListener('click' , function(){
-        let seleccion = jugadores.find (jugador => jugador.name == this.id);
-        console.log('El jugador es ' + seleccion.name);
-    })
-}
 
 // segunda parte, formularios -------
 
@@ -197,31 +204,4 @@ console.log(jugadores);
 miFormulario.nombre.value = miFormulario.imagen.value = miFormulario.edad.value = miFormulario.nacionalidad.value = ""
 
 renderPlantilla()
-
-
-
-//-------------la pongo aca asi despues de renderizar me reconoce el boton de la nueva card-----------------------------------
-let botones = document.getElementsByClassName('btnCompra')
-console.log(botones);
-
-for (const boton of botones){
-    boton.addEventListener('click' , function(){
-        let seleccion = jugadores.find (jugador => jugador.name == this.id);
-        console.log('El jugador es ' + seleccion.name);
-    })
 }
-}
-
-
-
-
-//----------------------------------------------------
-
-
-const renderPlantilla = () => {
-    figuritasHTML.innerHTML = ""
-    for(jugador of jugadores){
-        figuritasHTML.innerHTML+=plantilla(jugador)
-    }
-}
-/*  renderPlantilla() */
